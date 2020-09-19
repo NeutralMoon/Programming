@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 #include <clocale>
-#include <set>
 using namespace std;
 int main()
 {
@@ -11,4 +10,5 @@ int main()
     c = 2;
     z = a + b * c;
     cout << "Результат выражения 2+2*2 = " << z;
+    return 0;
 }
