@@ -1,22 +1,31 @@
 ﻿#include <iostream>
-#include <clocale>
+#include <locale>
 using namespace std;
 int main()
 {
-    setlocale(LC_ALL, "Russian");
-    int a, b;
+	setlocale(LC_ALL, "Russian");
+	double a, b, c;
+	cout << "Введите первое число ";
+	cin >> a;
+	cout << "Введите второе число ";
+	cin >> b;
+	c = a;
+	a = b;
+	b = c;
 
-    cout << "Введите значения a и b: ";
+	cout << "\n Первое число " << a;
+	cout << "\n Второе число " << b << endl;
 
-    if (cin >> a >> b)
-    {
-        cout << "Оригинальные значения: a = " << a << ", b = " << b << endl;
-        swap(a, b);
-        cout << "После смены: a = " << a << ", b = " << b << endl;
-    }
-    else
-    {
-        cout << "Ошибка" << endl;
-    }
-    return 0;
+	double d, e;
+	cout << "Введите первое число ";
+	cin >> d;
+	cout << "Введите второе число ";
+	cin >> e;
+	d = e - d;
+	e = e - d;
+	d = e + d;
+
+	cout << "\n Первое число " << d;
+	cout << "\n Второе число " << e;
+	return 0;
 }
