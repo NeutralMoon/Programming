@@ -1,0 +1,3 @@
+﻿  Project int and double.cpp
+C:\Users\4Krio\source\repos\Project int and double\Project int and double\Project int and double.cpp(8,9): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  Project int and double.vcxproj -> C:\Users\4Krio\source\repos\Project int and double\Debug\Project int and double.exe
