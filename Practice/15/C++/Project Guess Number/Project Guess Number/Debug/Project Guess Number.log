@@ -1,0 +1,3 @@
+﻿  Project Guess Number.cpp
+C:\Users\4Krio\source\repos\Project Guess Number\Project Guess Number\Project Guess Number.cpp(10,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Project Guess Number.vcxproj -> C:\Users\4Krio\source\repos\Project Guess Number\Debug\Project Guess Number.exe
