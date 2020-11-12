@@ -1,0 +1,8 @@
+﻿  Project Zaglav fail.cpp
+C:\Users\4Krio\source\repos\Project Zaglav fail\Project Zaglav fail\Source.cpp(1,9): warning C4068: неизвестная прагма "_2_H_"
+  Source.cpp
+C:\Users\4Krio\source\repos\Project Zaglav fail\Project Zaglav fail\Source.cpp(1,9): warning C4068: неизвестная прагма "_2_H_"
+  Source1.cpp
+C:\Users\4Krio\source\repos\Project Zaglav fail\Project Zaglav fail\Source1.cpp(2,1): fatal error C1070: непарные #if/#endif в файле "C:\Users\4Krio\source\repos\Project Zaglav fail\Project Zaglav fail\Source1.cpp"
+  Source2.cpp
+  Создание кода...
