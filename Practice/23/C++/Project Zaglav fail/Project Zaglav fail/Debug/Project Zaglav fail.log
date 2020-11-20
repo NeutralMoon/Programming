@@ -1,8 +1,8 @@
 ﻿  Project Zaglav fail.cpp
-C:\Users\4Krio\source\repos\Project Zaglav fail\Project Zaglav fail\Source.cpp(1,9): warning C4068: неизвестная прагма "_2_H_"
-  Source.cpp
-C:\Users\4Krio\source\repos\Project Zaglav fail\Project Zaglav fail\Source.cpp(1,9): warning C4068: неизвестная прагма "_2_H_"
-  Source1.cpp
-C:\Users\4Krio\source\repos\Project Zaglav fail\Project Zaglav fail\Source1.cpp(2,1): fatal error C1070: непарные #if/#endif в файле "C:\Users\4Krio\source\repos\Project Zaglav fail\Project Zaglav fail\Source1.cpp"
-  Source2.cpp
+C:\Users\4Krio\source\repos\Project Zaglav fail\Project Zaglav fail\Project Zaglav fail.cpp(14,18): warning C4305: инициализация: усечение из "double" в "float"
+  Fac.cpp
+  Sin.cpp
+C:\Users\4Krio\source\repos\Project Zaglav fail\Project Zaglav fail\Sin.cpp(9,9): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  Soch.cpp
   Создание кода...
+  Project Zaglav fail.vcxproj -> C:\Users\4Krio\source\repos\Project Zaglav fail\Debug\Project Zaglav fail.exe

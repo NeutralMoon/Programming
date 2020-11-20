@@ -140,9 +140,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Project Zaglav fail.cpp" />
-    <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Source1.cpp" />
-    <ClCompile Include="Source2.cpp" />
+    <ClCompile Include="Fac.cpp" />
+    <ClCompile Include="Sin.cpp" />
+    <ClCompile Include="Soch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Fac.h" />
+    <ClInclude Include="Sin.h" />
+    <ClInclude Include="Soch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
