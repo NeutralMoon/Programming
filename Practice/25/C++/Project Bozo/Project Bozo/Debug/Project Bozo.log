@@ -1,0 +1,3 @@
+﻿  Project Bozo.cpp
+C:\Users\4Krio\source\repos\Project Bozo\Project Bozo\Project Bozo.cpp(95,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Project Bozo.vcxproj -> C:\Users\4Krio\source\repos\Project Bozo\Debug\Project Bozo.exe
