@@ -1,81 +1,132 @@
-﻿#include <iostream>
-#include <string>
-#include <windows.h>
-using namespace std;
-struct student {
-    string fio;
-    int group;
-    int scor[5];
+﻿#include <iostream.h>
+#include <string.h>
+#include <conio.h>
+class progress;
+
+class student
+{
+    friend ostream& operator<<(ostream&, const student&);
+    friend istream& operator>>(istream&, student&);
+private:
+    friend class progress;
+    student* next;
+    char* name;
+    float mark;
+public:
+    void Ras();
+    void PrintStudent() { cout << "Student " << name << " have mark " << mark << endl; }
+    void ReadStudent()
+    {
+        cout << "Enter name: ";
+        cin >> name;
+        cout << "Enter mark: ";
+        cin >> mark;
+    }
+    student();
 };
 
+student::student()
+{
+    int k = 10;
+    name = new char[k + 1];
+    strcpy(name, "With Out Name");
+    mark = 0;
+}
 
-void Sort(student* studs, int& len) {
-    for (int i = 0; i < len - 1; i++) {
-        for (int j = i + 1; j < len; j++) {
-            if (studs[i].group > studs[j].group) {
-                student buf = studs[i];
-                studs[i] = studs[j];
-                studs[j] = buf;
-            }
+void student::Ras()
+{
+    student* s;
+    float fin = 0;
+    while (s)
+    {
+        fin += mark;
+        s = s->next;
+    }
+    cout << fin << endl;
+}
+
+class progress
+{
+    int count;
+    char Facultet[20];
+    student* first;
+    student* head;
+public:
+    progress(char* FacultetName)       
+    {
+        strcpy(Facultet, FacultetName);
+        count = 0;
+        first = head = NULL;
+    }
+    void AddStudent();
+    void PrintAll();
+    ~progress();
+};
+progress::~progress()
+{
+    if (count)
+    {
+        student* s = first;
+        while (s)
+        {
+            s = first->next;
+            delete first;
+            first = s;
         }
     }
 }
-double avg(student st) {
-    double sum = 0;
-    for (int i = 0; i < 5; i++) {
-        sum += st.scor[i];
+
+void progress::AddStudent()
+{
+    if (!count) {
+        first = new student;
+        head = first;
+        head->next = NULL;
+        head->ReadStudent();
+        count = 1;
     }
-    return sum / 5;
+    else {
+        head->next = new student;
+        head = head->next;
+        head->ReadStudent();
+        head->next = NULL;
+        count++;
+    }
 }
-int main() {
-    setlocale(LC_ALL, "rus");
-    cout << "Введите количество студентов" << endl;
-    int n;
-    cin >> n;
-    student* st = new student[n];
-    for (int i = 0; i != n; i++) {
-        cout << "Введите ФИО" << endl;
-        cin >> st[i].fio;
-        cout << "Введите номер группы" << endl;
-        cin >> st[i].group;
-        cout << "Успеваемость" << endl;
-        int j = 0;
-        do {
-            cout << "Оценка" << endl;
-            cin >> st[i].scor[j];
-            j++;
-        } while (j != 5);
-        cout << endl;
-    }
-    cout << endl;
-    Sort(st, n);
-    
-    for (int i = 0; i != n; i++) {
 
-        cout << st[i].fio << endl;
-        cout << st[i].group << endl;
-        for (int j = 0; j != 5; j++) {
-            cout << st[i].scor[j] << " ";
-        }
-        cout << endl;
+void progress::PrintAll()
+{
+    student* s;
+    s = first;
+    while (s)
+    {
+        s->PrintStudent();
+        s = s->next;
+    }
+}
 
+istream& operator>>(istream& input, student& s)
+{
+    input >> s.name;
+    return input;
+}
+
+ostream& operator<<(ostream& output, const student& s)
+{
+    output << s.name << s.mark << ' ' << endl;
+    return output;
+}
+
+void main()
+{
+    progress P("PS");
+    student S;
+    char s = 0;
+    while (s != 27)
+    {
+        P.AddStudent();
+        s = getch();
     }
-    cout << endl;
-    int sum = 0;
-    int ind;
-    int f = 0;
-    cout << "Студенты средний бал >4" << endl;
-    for (int i = 0; i != n; i++)
-        if (avg(st[i]) > 4) {
-            f++;
-            ind = i;
-            cout << st[ind].fio << endl;
-            cout << st[ind].group << endl;
-        }
-    if (f == 0) {
-        cout << "No" << endl;
-    }
-    delete[]st;
-    system("pause");
-    return 0;
+    P.PrintAll();
+    S.Ras();
 }
